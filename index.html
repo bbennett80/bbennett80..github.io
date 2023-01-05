@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-webp="true">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,40 @@
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <title>Brandon Bennett</title>
 </head>
+
 <body>
     <main class="container">
         <h1>Brandon Bennett</h1>
         <details>
             <summary role="button">About Me</summary>
-                <p>Write something about me. Maybe include interests?</p>
+            <p>Write something about me. Maybe include interests?</p>
         </details>
 
         <details>
             <summary>Interests</summary>
+            <p>Interests?</p>
         </details>
 
-        <article>List of things to follow.</article>
+        <div class="grid">
+            <article>List of things to follow.</article>
+            <article>List of things to follow.</article>
+            <article>List of things to follow.</article>
+        </div>
+        <label for="switch-1">
+            <input type="checkbox" id="switch-1" name="switch-1" role="switch" checked>
+        </label>
     </main>
+    <script type="text/javascript">
+        let toggle = document.getElementById("switch-1");
+
+        toggle.addEventListener("change", function() {
+            if (this.checked) {
+                document.querySelector("html").setAttribute("data-theme", "dark")
+            } else {
+                document.querySelector("html").setAttribute("data-theme", "light")
+            }
+        });
+    </script>
 </body>
+
 </html>
