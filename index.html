@@ -22,8 +22,8 @@
             </ul>
             <ul>
                 <li>
-                    <label for="switch-1">
-                        <input type="checkbox" id="switch-1" name="switch-1" role="switch" checked>
+                    <label for="toggle">
+                        <input type="checkbox" id="toggle" name="toggle" role="switch" checked>
                     </label>
                 </li>
             </ul>
@@ -90,7 +90,7 @@
     </section>
 
     <script type="text/javascript">
-        let toggle = document.getElementById("switch-1");
+        let toggle = document.getElementById("toggle");
 
         toggle.addEventListener("change", function() {
             if (this.checked) {
