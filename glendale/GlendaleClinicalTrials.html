@@ -25,27 +25,54 @@
       color: black;
       text-align: center;
       font-weight: 700;
-      margin: 1rem;
       font-size: 1.5rem;
+    }
+
+    button {
+      background-color: hsla(207, 55%, 42%, 1);
+      color: white;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: hsla(207, 55%, 62%, 1);
+      border-color: white;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: row;
+      justify-content: end; 
     }
 
   </style>
 </head>
 
 <body>
-  <h1>Glendale Cancer Center | Clinical Trials</h1>
+  <h1>Adventist Health - Glendale | Clinical Trials</h1>
 
   <h3>OPEN CLINICAL TRIALS</h3>
   <hr>
+  <div class="button">
+    <button onclick="resetFilters()">Reset Filters</button>
+  </div>
   <div id="open_trials" class="ag-theme-material" style="height: 700px;"></div>
   
-  <h3 style="padding: 20px">PIPELINE</h3>
+  <h3 style="padding: 20px">PIPELINE CLINICAL TRIALS</h3>
   <hr>
+  <div class="button">
+    <button onclick="resetFilters2()">Reset Filters</button>
+  </div>
   <div id="pipeline_trials" class="ag-theme-material" style="height: 700px;"></div>
 
   <script type="text/javascript">
     // onclick button function to reset filters
     const resetFilters = () => gridOptions.api.setFilterModel(null)
+    const resetFilters2 = () => gridOptions2.api.setFilterModel(null)
 
     // Set columns size when first loaded
     const onFirstDataRendered = (params) => params.api.sizeColumnsToFit();
